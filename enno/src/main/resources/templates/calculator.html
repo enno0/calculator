@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <h2>Simple Calculator</h2>
+
+    <form th:action="@{/calculator/add}" method="get">
+        <label for="a">Operand A:</label>
+        <input type="text" id="a" name="a" required>
+        <br>
+        <label for="b">Operand B:</label>
+        <input type="text" id="b" name="b" required>
+        <br>
+        <button type="submit">Add</button>
+    </form>
+
+    <!-- Repeat similar forms for subtract, multiply, and divide -->
+
+    <div th:if="${result != null}">
+        <p th:text="'Result: ' + ${result}"></p>
+    </div>
+
+    <div th:if="${error != null}">
+        <p th:text="${error}" style="color: red;"></p>
+    </div>
+
+</body>
+
+</html>

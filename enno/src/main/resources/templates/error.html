@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Error</title>
+    <!-- <div th:replace="~{/csrf-fragment.html}"></div> -->
+</head>
+
+<body>
+    <h1>Error</h1>
+    <p>An unexpected error occurred. We apologize for the inconvenience.</p>
+    <p th:if="${error}" th:text="${error}"></p>
+</body>
+
+</html>

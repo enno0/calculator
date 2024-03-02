@@ -1,14 +1,17 @@
 package com.calculator.enno.Service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.calculator.enno.DAO.CalculationResultRepository;
 import com.calculator.enno.model.CalculationResult;
 
 @Service
+@Transactional
 public class CalculatorService {
 
     @Autowired
@@ -50,5 +53,9 @@ public class CalculatorService {
         calculationResult.setResult(result);
         calculationResult.setTimestamp(new Date());
         resultRepository.save(calculationResult);
+    }
+
+    public List<CalculationResult> getAll() {
+        return resultRepository.findAll();
     }
 }

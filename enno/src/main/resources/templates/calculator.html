@@ -11,6 +11,8 @@
 
     <h2>Simple Calculator</h2>
 
+    <a th:href="@{/api/home}">Go to API Home</a>
+
     <form th:action="@{/calculator/add}" method="get">
         <label for="a">Operand A:</label>
         <input type="text" id="a" name="a" required>
@@ -21,10 +23,41 @@
         <button type="submit">Add</button>
     </form>
 
+    <form th:action="@{/calculator/subtract}" method="get">
+        <label for="a">Operand A:</label>
+        <input type="text" id="a" name="a" required>
+        <br>
+        <label for="b">Operand B:</label>
+        <input type="text" id="b" name="b" required>
+        <br>
+        <button type="submit">Subtract</button>
+    </form>
+
+    <form th:action="@{/calculator/multiply}" method="get">
+        <label for="a">Operand A:</label>
+        <input type="text" id="a" name="a" required>
+        <br>
+        <label for="b">Operand B:</label>
+        <input type="text" id="b" name="b" required>
+        <br>
+        <button type="submit">Multiply</button>
+    </form>
+
+    <form th:action="@{/calculator/divide}" method="get">
+        <label for="a">Operand A:</label>
+        <input type="text" id="a" name="a" required>
+        <br>
+        <label for="b">Operand B:</label>
+        <input type="text" id="b" name="b" required>
+        <br>
+        <button type="submit">Divide</button>
+    </form>
+
     <!-- Repeat similar forms for subtract, multiply, and divide -->
 
+
     <div th:if="${result != null}">
-        <p th:text="'Result: ' + ${result}"></p>
+        <p th:text="'Result (' + ${operation} + '): ' + ${result}"></p>
     </div>
 
     <div th:if="${error != null}">

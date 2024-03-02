@@ -42,9 +42,9 @@ public class AppConfig {
         return dataSource;
     }
 
-    @Bean
-    SpringSecurityDialect springSecurityDialect() {
-        return new SpringSecurityDialect();
-    }
+    // @Bean
+    // SpringSecurityDialect springSecurityDialect() {
+    // return new SpringSecurityDialect();
+    // }
 
 }

@@ -18,6 +18,15 @@
 	</properties>
 	<dependencies>
 
+		
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
@@ -84,6 +93,27 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+
+			<groupId>org.flywaydb</groupId>
+
+			<artifactId>flyway-maven-plugin</artifactId>
+
+			<version>9.22.3</version>
+
+			<configuration>
+
+				<url>jdbc:mysql://localhost:3307/work2?useSSL=false&amp;serverTimezone=UTC</url>
+
+				<user>kamal</user>
+
+				<password>work123</password>
+
+				<driver>com.mysql.cj.jdbc.Driver</driver>
+
+			</configuration>
+
 			</plugin>
 		</plugins>
 	</build>

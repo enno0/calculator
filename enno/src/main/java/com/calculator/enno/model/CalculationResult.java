@@ -15,17 +15,17 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name = "calculator_api")
+@Table(name = "calculator_api2")
 public class CalculationResult {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private double operandA;
-    private double operandB;
+    private Double operandA;
+    private Double operandB;
     private String operation;
-    private double result;
-    private Date timestamp;
+    private Double result;
 
+    private Date timestamp;
 }

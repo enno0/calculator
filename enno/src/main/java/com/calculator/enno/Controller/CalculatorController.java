@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.calculator.enno.DAO.CalculationResultRepository;
 import com.calculator.enno.Service.CalculatorService;
@@ -58,5 +59,24 @@ public class CalculatorController {
             model.addAttribute("error", e.getMessage());
         }
         return "calculator";
+    }
+
+    @GetMapping("/home")
+    public String home(Model model) {
+        List<CalculationResult> calculator = calculatorService.getAll();
+        model.addAttribute("home", calculator);
+        return "home";
+    }
+}
+
+@RestController
+@RequestMapping("/api")
+class ApiController {
+    @Autowired
+    private CalculatorService calculatorService;
+
+    @GetMapping("/home")
+    public List<CalculationResult> home(Model model) {
+        return calculatorService.getAll();
     }
 }

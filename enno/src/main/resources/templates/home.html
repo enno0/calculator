@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Operanda</th>
+                <th>Operandb</th>
+                <th>Operation</th>
+                <th>Result</th>
+                <th>Timestamp</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through the list of calculation results and display their information -->
+            <tr th:each="resultt : ${home}">
+                <td th:text="${resultt.id}"></td>
+                <td th:text="${resultt.operandA}"></td>
+                <td th:text="${resultt.operandB}"></td>
+                <td th:text="${resultt.operation}"></td>
+                <td th:text="${resultt.result}"></td>
+                <td th:text="${resultt.Timestamp}"></td>
+
+                <!-- <td th:text="${#dates.format(#numbers.formatInteger(result.timestamp), 'yyyy-MM-dd HH:mm:ss')}"></td> -->
+
+                <!-- Add more columns as needed -->
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

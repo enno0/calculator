@@ -1,6 +1,12 @@
 package com.calculator.enno.form;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class CalculatorForm {
+    // da DTO
 
     private double a;
     private double b;
@@ -9,35 +15,4 @@ public class CalculatorForm {
 
     // getters and setters
 
-    public double getA() {
-        return a;
-    }
-
-    public void setA(double a) {
-        this.a = a;
-    }
-
-    public double getB() {
-        return b;
-    }
-
-    public void setB(double b) {
-        this.b = b;
-    }
-
-    public Double getResult() {
-        return result;
-    }
-
-    public void setResult(Double result) {
-        this.result = result;
-    }
-
-    public String getError() {
-        return error;
-    }
-
-    public void setError(String error) {
-        this.error = error;
-    }
 }

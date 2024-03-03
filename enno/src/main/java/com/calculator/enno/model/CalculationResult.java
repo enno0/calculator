@@ -15,7 +15,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name = "calculator_api2")
+@Table(name = "calculator_api3")
 public class CalculationResult {
 
     @Id

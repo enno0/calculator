@@ -10,7 +10,6 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.thymeleaf.extras.springsecurity6.dialect.SpringSecurityDialect;
 
 @EnableWebMvc
 @Configuration
@@ -42,9 +41,6 @@ public class AppConfig {
         return dataSource;
     }
 
-    // @Bean
-    // SpringSecurityDialect springSecurityDialect() {
-    // return new SpringSecurityDialect();
-    // }
+
 
 }

@@ -60,7 +60,7 @@ public class MultiplicationController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable long id) {
         multiplicationService.delete(id);
-        return "redirect:/Multi/multiplications";
+        return "redirect:/Multi/multiplications-up";
     }
     @GetMapping("/delete-all")
     public String deleteAll() {

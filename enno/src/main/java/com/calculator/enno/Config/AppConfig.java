@@ -31,6 +31,7 @@ public class AppConfig {
         return ivr;
     }
 
+    @SuppressWarnings("null")
     @Bean
     DriverManagerDataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -40,6 +41,8 @@ public class AppConfig {
         dataSource.setPassword(env.getProperty("spring.datasource.password"));
         return dataSource;
     }
+
+   
 
 
 

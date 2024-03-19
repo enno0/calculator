@@ -9,6 +9,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRegistration;
 
 public class MainApp implements WebApplicationInitializer {
+    @SuppressWarnings("null")
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
 

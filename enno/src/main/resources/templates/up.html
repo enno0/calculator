@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <h2>Simple Calculator</h2>
+
+
+    <form th:action="@{/up/calculate}" method="post" th:object="${calculatorForm}">
+        Operand A: <input type="text" th:field="*{a}" /><br>
+        Operand B: <input type="text" th:field="*{b}" /><br>
+         <!-- Dropdown for selecting operation -->
+         Operation:
+         <select th:field="*{operation}">
+             <option value="add">Add</option>
+             <option value="subtract">Subtract</option>
+             <option value="multiply">Multiply</option>
+             <option value="divide">Divide</option>
+         </select><br>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <!-- Repeat similar forms for subtract, multiply, and divide -->
+    <p th:if="${calculatorForm.result}">Result: <span th:text="${calculatorForm.result}"></span></p>
+    <p th:if="${calculatorForm.error}" style="color: red;">Error: <span th:text="${calculatorForm.error}"></span></p>
+
+
+
+   
+
+</body>
+
+</html>

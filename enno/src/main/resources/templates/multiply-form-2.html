@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Form</title>
+</head>
+<body>
+    <h1>Multiplication Form</h1>
+    <form action="/Multi/multiply-up" method="post">
+        <label for="operA">Operand A:</label>
+        <input type="number" id="operA" name="operA" required><br><br>
+
+        <label for="multiplicationTable">Multiplication Table:</label>
+        <input type="number" id="multiplicationTable" name="multiplicationTable" required><br><br>
+
+        <button type="submit">Multiply</button>
+    </form>
+    <h2>DeleteAll:</h2>
+    <a th:href="@{/Multi/delete-all}">Delete</a>
+
+
+    <!-- <h2>Result:</h2>
+    <p th:if="${multiplicationForm.result}">
+        <span th:each="step : ${multiplicationForm.result}">
+            <span th:text="${step.operA} + ' x ' + ${multiplicationForm.multiplicationTable} + ' = ' + ${step.result}"></span><br>
+        </span>
+    </p> -->
+    
+    <p th:if="${multiplicationForm.error}" style="color: red;">
+        <span th:text="${multiplicationForm.error}"></span>
+    </p>
+
+    <h2>All Multiplications</h2>
+    <table border="1">
+        <tr>
+            <th>Operand (a)</th>
+            <th>Multiplication Table</th>
+            <th>Result</th>
+            <th>Timestamp</th>
+        </tr>
+        <!-- Loop through the list of multiplications and display each multiplication -->
+        <tr th:each="multiplication : ${multiplications}">
+            <td th:text="${multiplication.operA}"></td>
+            <td th:text="${multiplication.multiplicationTable}"></td>
+            <td th:text="${multiplication.result}"></td>
+            <td th:text="${multiplication.timestamp}"></td>
+            <td>
+                <!-- Construct delete link with the multiplication id -->
+                <a th:href="@{/Multi/delete/{id}(id=*{multiplication.id})}">Delete</a>
+            </td>
+            
+        </tr>
+    </table>
+</body>
+</html>

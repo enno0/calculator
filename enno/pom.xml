@@ -94,7 +94,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 
 			<groupId>org.flywaydb</groupId>
 
@@ -114,7 +114,7 @@
 
 			</configuration>
 
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 

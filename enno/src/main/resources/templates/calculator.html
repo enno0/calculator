@@ -52,13 +52,19 @@
         <br>
         <button type="submit">Divide</button>
     </form>
-
+    
     <!-- Repeat similar forms for subtract, multiply, and divide -->
+    
 
 
     <div th:if="${result != null}">
-        <p th:text="'Result (' + ${operation} + '): ' + ${result}"></p>
+        <p th:text="'Result    : ' + ${result}"></p>
     </div>
+   
+    
+   
+    
+    
 
     <div th:if="${error != null}">
         <p th:text="${error}" style="color: red;"></p>

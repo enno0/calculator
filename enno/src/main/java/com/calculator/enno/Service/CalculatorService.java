@@ -2,6 +2,7 @@ package com.calculator.enno.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,20 @@ import com.calculator.enno.model.CalculationResult;
 @Service
 @Transactional
 public class CalculatorService {
+    public double performOperation(double a, double b, String operation) {
+        switch (operation) {
+            case "add":
+                return add(a, b);
+            case "subtract":
+                return subtract(a, b);
+            case "multiply":
+                return multiply(a, b);
+            case "divide":
+                return divide(a, b);
+            default:
+                throw new IllegalArgumentException("Invalid operation: " + operation);
+        }
+    }
 
     @Autowired
     private CalculationResultRepository resultRepository;
@@ -57,5 +72,13 @@ public class CalculatorService {
 
     public List<CalculationResult> getAll() {
         return resultRepository.findAll();
+    }
+
+    public void delete(long id){
+        resultRepository.deleteById(id);
+    }
+   
+    public Optional<CalculationResult> getById(long id) {
+        return resultRepository.findById(id);
     }
 }

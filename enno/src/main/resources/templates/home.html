@@ -29,9 +29,11 @@
                 <td th:text="${resultt.operation}"></td>
                 <td th:text="${resultt.result}"></td>
                 <td th:text="${resultt.Timestamp}"></td>
+                <td>
+                    <!-- <a th:href="@{/customers/update/{id}(id=*{customer.id})}">Update</a> -->
+                    <a th:href="@{/calculator/delete/{id}(id=*{resultt.id})}">Delete</a>
 
-                <!-- <td th:text="${#dates.format(#numbers.formatInteger(result.timestamp), 'yyyy-MM-dd HH:mm:ss')}"></td> -->
-
+                  </td>
                 <!-- Add more columns as needed -->
             </tr>
         </tbody>
